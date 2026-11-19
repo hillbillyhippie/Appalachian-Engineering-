@@ -47,6 +47,11 @@
     .content-inner h2 { margin:2rem 0 .6rem; padding-bottom:.45rem; color:var(--cream); font-size:1.15rem; border-bottom:1px solid #c99d54; }
     .content-inner p,.content-inner li { color:#d3d0c3; line-height:1.7; }
     .tags { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.8rem; } .tag { padding:.35rem .65rem; border:1px solid #78643d; border-radius:999px; color:#e5c27c; font:.82rem/1.2 sans-serif; background:#17241b88; }
+    .parts-note { margin:2rem 0; border:1px solid #78643d; border-radius:6px; background:#17241b88; }
+    .parts-note summary { padding:1rem; color:#e5c27c; cursor:pointer; letter-spacing:.04em; }
+    .parts-note summary:focus-visible { outline:2px solid var(--cream); outline-offset:3px; }
+    .parts-note p { margin:0; padding:0 1rem 1rem; }
+    .parts-note a { color:#f0cc82; }
     .back-button { margin-top:2rem; padding:.7rem 1rem; color:var(--cream); border:1px solid #c99d54; border-radius:4px; background:transparent; cursor:pointer; } .back-button:hover { background:#ffffff12; }
     @keyframes rise-in { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
     @media (max-width:620px) { .market-links { grid-template-columns:1fr; } }
@@ -89,6 +94,12 @@
         <p>A speaker can start as a ready-made platform, a modular build, or a fully custom project. We can talk through the room, the music, the available parts, and the level of hands-on work that feels right.</p>
         <h2>Gear &amp; Aesthetics</h2>
         <div class="tags"><span class="tag">Boho</span><span class="tag">Hippie</span><span class="tag">Hillbilly</span><span class="tag">Custom Speakers</span><span class="tag">Festival Gear</span><span class="tag">Modular Builds</span><span class="tag">Original Designs</span><span class="tag">Less Waste</span></div>
+
+        <details class="parts-note">
+          <summary>Speaker Tower — modular options reference</summary>
+          <p>This tucked-away checklist shows the kinds of components and choices used as a starting framework for modular speaker builds. It is an informational reference only—not a shopping page, parts endorsement, or verified build plan. Components and compatibility can vary by project. <a href="speaker_tower_buying_list.txt" download>View or download the checklist</a>. Please have the design and electrical safety reviewed by a qualified technician before buying parts or building.</p>
+        </details>
+
         <button class="back-button" id="back-button" type="button">← Back to the welcome door</button>
       </div>
     </section>

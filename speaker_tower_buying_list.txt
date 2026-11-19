@@ -1,0 +1,60 @@
+SPEAKER TOWER COMPREHENSIVE BUYING CHECKLIST
+--------------------------------------------
+REFERENCE DRAFT — MODULAR OPTIONS FRAMEWORK ONLY
+
+This checklist is an informational starting point describing one possible set of components and choices for a speaker project. It is not a shopping page, a parts endorsement, a complete or verified bill of materials, or a guaranteed-compatible build plan. No purchase links are provided. Parts, availability, ratings, wiring, and compatibility can vary by design.
+
+SAFETY NOTICE
+This list has not been independently checked for electrical safety, compatibility, ratings, or completeness. Do not rely on the claim that no soldering is required as evidence that an assembly is safe or beginner-proof. A 20V battery pack can deliver hazardous fault current and create fire, burn, or equipment-damage risks. Before buying, wiring, or powering anything, have a qualified audio/electrical technician verify the battery adapter and polarity, fuse protection, wire gauge, switch ratings and pinout, amplifier supply requirements, speaker impedance and load, grounding, and the compatibility of every component. Do not connect or test an unverified setup.
+
+The component descriptions below are retained as a conceptual example of a modular framework, not as instructions to assemble or connect the equipment.
+
+1. CORE SIGNAL HARDWARE
+* QCC3031 Lossless LINE-In Bluetooth 5.1 Receiver Board
+  - Search Term: "QCC3031 Bluetooth 5.1 Receiver Board Audio Lossless Line In"
+  - Description: Bare PCB with physical 3.5mm input and 3.5mm output jacks pre-soldered.
+* Heavy Duty 3PDT 9-Pin Latching Toggle Switch (ON-ON, 15A/250V)
+  - Search Term: "Heavy Duty 3PDT 9-Pin Latching Toggle Switch ON-ON 15A"
+  - Description: Multi-pole bat-lever selector switch to completely isolate/bypass the Bluetooth board when running raw analog audio.
+* SENRISE 3-Position 4-Pole Universal Rotary Cam Changeover Switch (20A Size)
+  - Search Term: "SENRISE 3 Position 4 Pole Universal Rotary Cam Changeover Switch 20A"
+  - Description: 16-screw physical block used to mechanically route audio lines into Mono, Hemisphere, or 3D Interlaced tracks.
+* 3-Core 3.5mm TRS Male Pigtail Cables (Pack of 2)
+  - Search Term: "3.5mm male trs pigtail bare wire"
+  - Description: Headphone patch leads chopped to expose open wire strands for direct screw clamping into the switches.
+
+2. POWER & NOISE HARDWARE
+* 4-Channel USB QC3.0 DC-DC Buck Converter Step Down Module (6V-32V Input)
+  - Search Term: "4 Channel USB QC3.0 DC-DC Buck Converter Module"
+  - Description: Heavy-duty power board with screw inputs for 20V battery lines and 4 isolated USB output slots.
+* 3.5mm Audio Ground Loop Isolator
+  - Search Term: "3.5mm audio ground loop isolator"
+  - Description: In-line passive audio filter barrel to block battery power supply buzzing and digital line hum.
+* 5.5mm x 2.1mm Solderless DC Power Barrel Jack Adapters (Male & Female Pack)
+  - Search Term: "5.5mm x 2.1mm DC Power Jack Plug Adapter Screw Terminal"
+  - Description: Solderless terminal block adapters to convert the raw DeWalt battery wires into a standard plug for the amplifier power jack.
+
+3. AMPLIFICATION, CURRENT & SOURCE INTEGRATION
+* MK21SP RuZ 2.1 Channel Amplifier Board
+  - Search Term: "MK21SP RuZ amplifier board"
+  - Description: Main audio powertrain that drives the 8 upper speakers and contains the built-in active subwoofer cross-routing filters.
+* DeWalt 20V Max Battery Dock/Adapter with Raw Wire Leads
+  - Search Term: "Dewalt 20v battery adapter power wheels"
+  - Description: Rigid battery slip-dock used to secure your high-capacity 8Ah or 12Ah packs inside the chassis.
+* Standard Male-to-Male 3.5mm Audio Aux Cable (Short)
+  - Search Term: "Short 3.5mm male to male aux cable"
+  - Description: Simple external patch cord to wire the CD player up to the control panel port out in the woods.
+* Panel-Mount 3.5mm Female Jack to Bare Wire Adapter
+  - Search Term: "3.5mm female panel mount screw terminal"
+  - Description: Threaded jack that mounts flush into your control plate to give you a solid, plug-in auxiliary port.
+
+4. WIRE & SYSTEM CONNECTIONS
+* Heavy Gauge Stranded Copper Hookup Wire (14 AWG or 16 AWG)
+  - Search Term: "16 AWG stranded copper hookup wire red black"
+  - Description: Thick power lines used to bridge the DeWalt battery adapter cleanly over to the amplifier and buck converter.
+* Standard Solid Core Jumper Wire Spool (22 AWG)
+  - Search Term: "22 AWG solid core jumper wire"
+  - Description: Thin, easily bent wires used to create the short bridge loops across the numbered screws on the back of the Senrise dial.
+* 2-Pin Screw Terminal Block Splicing/Barrier Strips
+  - Search Term: "Dual row screw terminal barrier strip block"
+  - Description: Solderless connection terminals to split your main 20V battery output into parallel paths safely.
