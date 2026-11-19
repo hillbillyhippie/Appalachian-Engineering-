@@ -3,164 +3,54 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Welcome to Appalachian Engineering — handcrafted sound and festival gear from the hills.">
+  <meta name="description" content="Welcome to Appalachian Engineering — original designs, handcrafted sound, and no throwaway thinking.">
   <meta name="theme-color" content="#18221b">
   <title>Welcome | Appalachian Engineering</title>
   <style>
-    :root {
-      color-scheme: dark;
-      --cream: #f3ead7;
-      --gold: #d7a750;
-      --ink: #18221b;
-      --wood: #69402b;
-      --wood-light: #91603b;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      color: var(--cream);
-      background: var(--ink);
-      font-family: Georgia, 'Times New Roman', serif;
-    }
-    button { font: inherit; }
-    .landing {
-      min-height: 100svh;
-      position: relative;
-      isolation: isolate;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      padding: 2rem 1.25rem;
-      background:
-        linear-gradient(180deg, rgba(14, 24, 19, .25), rgba(14, 24, 19, .25) 42%, rgba(12, 19, 15, .88)),
-        radial-gradient(ellipse at 50% 65%, #536648 0%, #334b3a 33%, #1d3229 66%, #14251e 100%);
-    }
-    .landing::before, .landing::after {
-      content: '';
-      position: absolute;
-      z-index: -1;
-      left: -8%; right: -8%; bottom: -13%;
-      height: 44%;
-      border-radius: 50% 50% 0 0 / 28% 28% 0 0;
-      background: #273c2c;
-      transform: rotate(-3deg);
-    }
-    .landing::after {
-      left: 34%; right: -20%; bottom: -20%;
-      height: 48%;
-      background: #1d3025;
-      transform: rotate(5deg);
-    }
-    .stars {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      opacity: .7;
-      background-image: radial-gradient(1px 1px at 12% 18%, #fff8df 99%, transparent), radial-gradient(1.5px 1.5px at 79% 13%, #fff8df 99%, transparent), radial-gradient(1px 1px at 68% 30%, #fff8df 99%, transparent), radial-gradient(1px 1px at 25% 35%, #fff8df 99%, transparent), radial-gradient(1px 1px at 91% 39%, #fff8df 99%, transparent), radial-gradient(1px 1px at 43% 12%, #fff8df 99%, transparent);
-    }
-    .welcome {
-      width: min(100%, 720px);
-      text-align: center;
-      padding: 1.75rem 1rem 2rem;
-      animation: rise-in .9s ease both;
-    }
-    .brand-banner {
-      display: inline-block;
-      padding: .8rem 1.5rem .7rem;
-      margin: 0 auto 1.4rem;
-      border-block: 1px solid rgba(215, 167, 80, .72);
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: .22em;
-      font: 700 clamp(.78rem, 2.4vw, 1rem)/1.4 Georgia, serif;
-      text-shadow: 0 2px 12px #111;
-    }
-    .brand-banner span { display: block; color: var(--cream); font-size: .64em; letter-spacing: .34em; margin-top: .25rem; }
-    h1 { margin: 0; font-size: clamp(2.4rem, 7vw, 4.8rem); line-height: 1.03; font-weight: 400; text-shadow: 0 3px 18px #101710; }
-    .subtitle { margin: .75rem 0 1.4rem; color: #e7d8b8; font-size: clamp(1rem, 2.8vw, 1.25rem); }
-    .door-button {
-      display: block;
-      position: relative;
-      width: clamp(190px, 42vw, 270px);
-      height: clamp(285px, 54vw, 365px);
-      margin: 0 auto;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      cursor: pointer;
-      perspective: 900px;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .door-frame {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      border: 9px solid #3b2b1d;
-      border-bottom-width: 12px;
-      border-radius: 50% 50% 3px 3px / 23% 23% 3px 3px;
-      background: #d9b46b;
-      box-shadow: 0 0 0 2px #b58b4c, 0 18px 35px #0a110dcc, 0 0 55px #e4bb6a22;
-    }
-    .door {
-      position: absolute;
-      inset: 0;
-      transform-origin: left center;
-      transition: transform 1.15s cubic-bezier(.2,.72,.21,1), filter .5s ease;
-      background: repeating-linear-gradient(90deg, transparent 0 23%, rgba(31, 16, 10, .22) 23.5% 24.5%, transparent 25% 48%), linear-gradient(90deg, #855536, #a16d43 48%, #76492e);
-      border: 2px solid #c09255;
-      box-shadow: inset 0 0 16px #28180d88;
-    }
-    .door::before, .door::after {
-      content: '';
-      position: absolute;
-      left: 7%; right: 7%; height: 10px;
-      border: 2px solid #5b3924;
-      background: #996640;
-      box-shadow: inset 0 1px 4px #d5a26a55;
-    }
-    .door::before { top: 62%; }
-    .door::after { top: 81%; }
-    .window {
-      position: absolute;
-      top: 12%; left: 50%; transform: translateX(-50%);
-      width: 43%; height: 31%;
-      overflow: hidden;
-      border: 7px solid #583820;
-      border-radius: 50% 50% 4px 4px / 55% 55% 4px 4px;
-      background: linear-gradient(150deg, #8cb2ad 0%, #d2c584 62%, #607a51 63%, #40533d 100%);
-      box-shadow: inset 0 0 0 2px #d4ae69, 0 2px 8px #2b1b10;
-    }
-    .window::before, .window::after { content: ''; position: absolute; background: #593a23; }
-    .window::before { left: 48%; top: 0; bottom: 0; width: 5px; }
-    .window::after { left: 0; right: 0; top: 52%; height: 5px; }
-    .knob {
-      position: absolute;
-      top: 61%; right: 12%; width: 13px; height: 13px;
-      border-radius: 50%; background: radial-gradient(circle at 35% 30%, #ffe6a3, #bd8539 60%, #6d481e);
-      box-shadow: 0 1px 4px #26170d;
-    }
-    .threshold { position: absolute; left: -8%; right: -8%; bottom: -7px; height: 13px; background: #4a3524; box-shadow: 0 8px 14px #10171088; }
-    .door-button:hover .door { filter: brightness(1.12); }
-    .door-button:focus-visible { outline: 3px solid var(--cream); outline-offset: 9px; border-radius: 8px; }
-    .enter-hint { display: inline-block; margin-top: 1.15rem; color: var(--cream); font-size: .88rem; letter-spacing: .13em; text-transform: uppercase; }
-    .enter-hint::after { content: '  →'; color: var(--gold); }
-    .landing.opening .door { transform: rotateY(-105deg); }
-    .landing.opening .door-frame { background: radial-gradient(ellipse at center, #f8d68b 0, #b68748 42%, #354a32 100%); }
-    .landing.entered { display: none; }
-    .site-content { display: none; min-height: 100svh; padding: 3rem 1.25rem; background: linear-gradient(145deg, #17241b, #263b2b 60%, #18241b); }
-    .site-content.visible { display: block; animation: rise-in .8s ease both; }
-    .content-inner { width: min(100%, 760px); margin: 0 auto; }
-    .content-inner .brand-banner { margin-bottom: 2rem; }
-    .content-inner h1 { color: var(--gold); font-size: clamp(2rem, 6vw, 3.4rem); }
-    .content-inner h2 { margin: 2rem 0 .6rem; padding-bottom: .45rem; color: var(--cream); font-size: 1.15rem; border-bottom: 1px solid #c99d54; }
-    .content-inner p, .content-inner li { color: #d3d0c3; line-height: 1.7; }
-    .tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .8rem; }
-    .tag { padding: .35rem .65rem; border: 1px solid #78643d; border-radius: 999px; color: #e5c27c; font: .82rem/1.2 sans-serif; background: #17241b88; }
-    .back-button { margin-top: 2rem; padding: .7rem 1rem; color: var(--cream); border: 1px solid #c99d54; border-radius: 4px; background: transparent; cursor: pointer; }
-    .back-button:hover { background: #ffffff12; }
-    @keyframes rise-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
+    :root { color-scheme: dark; --cream:#f3ead7; --gold:#d7a750; --ink:#18221b; --wood:#69402b; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; color:var(--cream); background:var(--ink); font-family:Georgia,'Times New Roman',serif; }
+    button { font:inherit; }
+    .landing { min-height:100svh; position:relative; isolation:isolate; display:grid; place-items:center; overflow:hidden; padding:2rem 1.25rem; background:linear-gradient(180deg,#20382b99,#0e1710dd),radial-gradient(ellipse at 50% 68%,#536648 0%,#334b3a 33%,#1d3229 66%,#14251e 100%); }
+    .landing::before,.landing::after { content:''; position:absolute; z-index:-1; left:-8%; right:-8%; bottom:-13%; height:44%; border-radius:50% 50% 0 0/28% 28% 0 0; background:#273c2c; transform:rotate(-3deg); }
+    .landing::after { left:34%; right:-20%; bottom:-20%; height:48%; background:#1d3025; transform:rotate(5deg); }
+    .stars { position:absolute; inset:0; z-index:-1; opacity:.7; background-image:radial-gradient(1px 1px at 12% 18%,#fff8df 99%,transparent),radial-gradient(1.5px 1.5px at 79% 13%,#fff8df 99%,transparent),radial-gradient(1px 1px at 68% 30%,#fff8df 99%,transparent),radial-gradient(1px 1px at 25% 35%,#fff8df 99%,transparent),radial-gradient(1px 1px at 91% 39%,#fff8df 99%,transparent); }
+    .welcome { width:min(100%,720px); text-align:center; padding:1.75rem 1rem 2rem; animation:rise-in .9s ease both; }
+    .brand-banner { display:inline-block; padding:.8rem 1.5rem .7rem; margin:0 auto 1.4rem; border-block:1px solid #d7a750b8; color:var(--gold); text-transform:uppercase; letter-spacing:.22em; font:700 clamp(.78rem,2.4vw,1rem)/1.4 Georgia,serif; text-shadow:0 2px 12px #111; }
+    .brand-banner span { display:block; color:var(--cream); font-size:.64em; letter-spacing:.34em; margin-top:.25rem; }
+    h1 { margin:0; font-size:clamp(2.4rem,7vw,4.8rem); line-height:1.03; font-weight:400; text-shadow:0 3px 18px #101710; }
+    .subtitle { margin:.75rem 0 1.4rem; color:#e7d8b8; font-size:clamp(1rem,2.8vw,1.25rem); }
+    .door-button { display:block; position:relative; width:clamp(190px,42vw,270px); height:clamp(285px,54vw,365px); margin:0 auto; padding:0; border:0; background:transparent; cursor:pointer; perspective:900px; -webkit-tap-highlight-color:transparent; }
+    .door-frame { position:absolute; inset:0; overflow:hidden; border:9px solid #3b2b1d; border-bottom-width:12px; border-radius:50% 50% 3px 3px/23% 23% 3px 3px; background:#d9b46b; box-shadow:0 0 0 2px #b58b4c,0 18px 35px #0a110dcc,0 0 55px #e4bb6a22; }
+    .door { position:absolute; inset:0; transform-origin:left center; transition:transform 1.15s cubic-bezier(.2,.72,.21,1),filter .5s ease; background:repeating-linear-gradient(90deg,transparent 0 23%,#1f0a0a38 23.5% 24.5%,transparent 25% 48%),linear-gradient(90deg,#855536,#a16d43 48%,#76492e); border:2px solid #c09255; box-shadow:inset 0 0 16px #28180d88; }
+    .door::before,.door::after { content:''; position:absolute; left:7%; right:7%; height:10px; border:2px solid #5b3924; background:#996640; box-shadow:inset 0 1px 4px #d5a26a55; }
+    .door::before { top:62%; } .door::after { top:81%; }
+    .window { position:absolute; top:12%; left:50%; transform:translateX(-50%); width:43%; height:31%; overflow:hidden; border:7px solid #583820; border-radius:50% 50% 4px 4px/55% 55% 4px 4px; background:linear-gradient(150deg,#8cb2ad 0%,#d2c584 62%,#607a51 63%,#40533d 100%); box-shadow:inset 0 0 0 2px #d4ae69,0 2px 8px #2b1b10; }
+    .window::before,.window::after { content:''; position:absolute; background:#593a23; } .window::before { left:48%; top:0; bottom:0; width:5px; } .window::after { left:0; right:0; top:52%; height:5px; }
+    .knob { position:absolute; top:61%; right:12%; width:13px; height:13px; border-radius:50%; background:radial-gradient(circle at 35% 30%,#ffe6a3,#bd8539 60%,#6d481e); box-shadow:0 1px 4px #26170d; }
+    .threshold { position:absolute; left:-8%; right:-8%; bottom:-7px; height:13px; background:#4a3524; box-shadow:0 8px 14px #10171088; }
+    .door-button:hover .door { filter:brightness(1.12); }
+    .door-button:focus-visible { outline:3px solid var(--cream); outline-offset:9px; border-radius:8px; }
+    .enter-hint { display:inline-block; margin-top:1.15rem; color:var(--cream); font-size:.88rem; letter-spacing:.13em; text-transform:uppercase; } .enter-hint::after { content:'  →'; color:var(--gold); }
+    .landing.opening .door { transform:rotateY(-105deg); } .landing.opening .door-frame { background:radial-gradient(ellipse at center,#f8d68b 0,#b68748 42%,#354a32 100%); }
+    .landing.entered { display:none; }
+    .site-content { display:none; min-height:100svh; padding:3rem 1.25rem; background:linear-gradient(145deg,#17241b,#263b2b 60%,#18241b); }
+    .site-content.visible { display:block; animation:rise-in .8s ease both; }
+    .content-inner { width:min(100%,760px); margin:0 auto; }
+    .welcome-copy { max-width:650px; margin:0 auto 2.2rem; text-align:center; }
+    .welcome-copy h1 { color:var(--gold); font-size:clamp(2.2rem,6vw,3.8rem); }
+    .welcome-copy p { color:#e4dfcf; line-height:1.75; font-size:clamp(1.05rem,2.5vw,1.2rem); }
+    .market-links { display:grid; grid-template-columns:repeat(3,1fr); gap:.8rem; margin:1.5rem 0 2.2rem; }
+    .market-links a { display:grid; place-items:center; min-height:72px; padding:.8rem; text-align:center; text-decoration:none; color:var(--cream); border:1px solid #c99d54; border-radius:6px; background:#17241b88; line-height:1.35; }
+    .market-links a span { display:block; color:#e5c27c; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+    .market-links a:hover,.market-links a:focus-visible { background:#ffffff12; transform:translateY(-2px); }
+    .content-inner h2 { margin:2rem 0 .6rem; padding-bottom:.45rem; color:var(--cream); font-size:1.15rem; border-bottom:1px solid #c99d54; }
+    .content-inner p,.content-inner li { color:#d3d0c3; line-height:1.7; }
+    .tags { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.8rem; } .tag { padding:.35rem .65rem; border:1px solid #78643d; border-radius:999px; color:#e5c27c; font:.82rem/1.2 sans-serif; background:#17241b88; }
+    .back-button { margin-top:2rem; padding:.7rem 1rem; color:var(--cream); border:1px solid #c99d54; border-radius:4px; background:transparent; cursor:pointer; } .back-button:hover { background:#ffffff12; }
+    @keyframes rise-in { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+    @media (max-width:620px) { .market-links { grid-template-columns:1fr; } }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; } }
   </style>
 </head>
 <body>
@@ -168,20 +58,11 @@
     <section class="landing" id="welcome" aria-labelledby="welcome-title">
       <div class="stars" aria-hidden="true"></div>
       <div class="welcome">
-        <div class="brand-banner" aria-label="Appalachian Engineering, Hillbilly Hippie Hi-Fi">
-          Appalachian Engineering
-          <span>Hillbilly Hippie Hi-Fi</span>
-        </div>
+        <div class="brand-banner" aria-label="Appalachian Engineering, Hillbilly Hippie Hi-Fi">Appalachian Engineering<span>Hillbilly Hippie Hi-Fi</span></div>
         <h1 id="welcome-title">Welcome, friend.</h1>
         <p class="subtitle">Good things happen when you step inside.</p>
         <button class="door-button" id="enter-button" type="button" aria-label="Open the door and enter Appalachian Engineering">
-          <span class="door-frame" aria-hidden="true">
-            <span class="door">
-              <span class="window"></span>
-              <span class="knob"></span>
-            </span>
-            <span class="threshold"></span>
-          </span>
+          <span class="door-frame" aria-hidden="true"><span class="door"><span class="window"></span><span class="knob"></span></span><span class="threshold"></span></span>
         </button>
         <span class="enter-hint">Tap the door to enter</span>
       </div>
@@ -189,50 +70,33 @@
 
     <section class="site-content" id="inside" aria-labelledby="inside-title" aria-hidden="true">
       <div class="content-inner">
-        <div class="brand-banner">Appalachian Engineering<span>Hillbilly Hippie Hi-Fi</span></div>
-        <h1 id="inside-title">Make yourself at home.</h1>
-        <h2>The Vibe &amp; Sound</h2>
-        <p>Hand-crafted custom speaker designs, mobile sound systems, and festival gear built for the road, the campground, and the open air.</p>
-        <h2>Soundtracking the Scene</h2>
-        <p>Built for fans of jam bands, live music, and American roots:</p>
-        <ul>
-          <li>Phish &amp; Grateful Dead</li>
-          <li>Billy Strings &amp; Tyler Childers</li>
-          <li>James McMurtry &amp; classic road tunes</li>
-        </ul>
-        <h2>Gear &amp; Aesthetics</h2>
-        <div class="tags">
-          <span class="tag">Boho</span><span class="tag">Hippie</span><span class="tag">Hillbilly</span>
-          <span class="tag">Custom Bluetooth Speakers</span><span class="tag">Festival Gear</span>
-          <span class="tag">Groovy Merch</span><span class="tag">Original Designs</span>
-          <span class="tag">Earthy</span><span class="tag">Freedom</span>
+        <div class="welcome-copy">
+          <div class="brand-banner">Appalachian Engineering<span>Hillbilly Hippie Hi-Fi</span></div>
+          <h1 id="inside-title" tabindex="-1">Come on inside.</h1>
+          <p><strong>Appalachian Engineering is where the real Hillbilly Hippies hang out.</strong> This is a place for original designs, good music, hands-on projects, and less throwaway thinking.</p>
+          <p>You can find my merchandise on <strong>Etsy</strong> and <strong>TeePublic</strong>. Just search for <strong>Appalachian Engineering</strong> or <strong>Hillbilly Hippie Hi-Fi</strong>. You can also keep up with Appalachian Engineering and Hillbilly Hippie Hi-Fi on Facebook.</p>
         </div>
+
+        <nav class="market-links" aria-label="Find Appalachian Engineering elsewhere">
+          <a href="https://www.etsy.com/search?q=Appalachian%20Engineering%20Hillbilly%20Hippie%20Hi-Fi" target="_blank" rel="noopener noreferrer"><div><span>Shop on</span>Etsy</div></a>
+          <a href="https://www.teepublic.com/search?q=Appalachian%20Engineering%20Hillbilly%20Hippie%20Hi-Fi" target="_blank" rel="noopener noreferrer"><div><span>Shop on</span>TeePublic</div></a>
+          <a href="https://www.facebook.com/search/top?q=Appalachian%20Engineering%20Hillbilly%20Hippie%20Hi-Fi" target="_blank" rel="noopener noreferrer"><div><span>Follow us on</span>Facebook</div></a>
+        </nav>
+
+        <h2>The Vibe &amp; Sound</h2>
+        <p>I build custom speaker ideas and festival gear around real listening, useful parts, modular projects, and making things that do not belong in a landfill. Repurposed materials and thoughtful acoustic design come first.</p>
+        <h2>Made to Fit the Listener</h2>
+        <p>A speaker can start as a ready-made platform, a modular build, or a fully custom project. We can talk through the room, the music, the available parts, and the level of hands-on work that feels right.</p>
+        <h2>Gear &amp; Aesthetics</h2>
+        <div class="tags"><span class="tag">Boho</span><span class="tag">Hippie</span><span class="tag">Hillbilly</span><span class="tag">Custom Speakers</span><span class="tag">Festival Gear</span><span class="tag">Modular Builds</span><span class="tag">Original Designs</span><span class="tag">Less Waste</span></div>
         <button class="back-button" id="back-button" type="button">← Back to the welcome door</button>
       </div>
     </section>
   </main>
   <script>
-    const welcome = document.getElementById('welcome');
-    const inside = document.getElementById('inside');
-    const enterButton = document.getElementById('enter-button');
-    const backButton = document.getElementById('back-button');
-
-    enterButton.addEventListener('click', () => {
-      welcome.classList.add('opening');
-      window.setTimeout(() => {
-        welcome.classList.add('entered');
-        inside.classList.add('visible');
-        inside.setAttribute('aria-hidden', 'false');
-        document.getElementById('inside-title').focus?.();
-      }, 700);
-    });
-
-    backButton.addEventListener('click', () => {
-      inside.classList.remove('visible');
-      inside.setAttribute('aria-hidden', 'true');
-      welcome.classList.remove('entered', 'opening');
-      enterButton.focus();
-    });
+    const welcome=document.getElementById('welcome'),inside=document.getElementById('inside'),enterButton=document.getElementById('enter-button'),backButton=document.getElementById('back-button');
+    enterButton.addEventListener('click',()=>{welcome.classList.add('opening');window.setTimeout(()=>{welcome.classList.add('entered');inside.classList.add('visible');inside.setAttribute('aria-hidden','false');document.getElementById('inside-title').focus();},700);});
+    backButton.addEventListener('click',()=>{inside.classList.remove('visible');inside.setAttribute('aria-hidden','true');welcome.classList.remove('entered','opening');enterButton.focus();});
   </script>
 </body>
 </html>
