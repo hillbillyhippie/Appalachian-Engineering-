@@ -7,13 +7,18 @@
   <meta name="theme-color" content="#18221b">
   <title>The Bucket | Appalachian Engineering</title>
   <style>
-    :root { color-scheme:dark; --cream:#f3ead7; --gold:#d7a750; --ink:#18221b; }
+    :root { color-scheme:dark; --cream:#f3ead7; --gold:#d7a750; }
     * { box-sizing:border-box; }
     body { margin:0; min-height:100vh; padding:2rem 1rem; color:var(--cream); background:linear-gradient(145deg,#17241b,#263b2b 60%,#18241b); font-family:Georgia,'Times New Roman',serif; }
     main { width:min(100%,760px); margin:0 auto; }
     header { text-align:center; margin:1rem 0 2rem; }
     .brand { display:inline-block; padding:.8rem 1.5rem .7rem; margin:0 auto 1.4rem; border-block:1px solid #d7a750b8; color:var(--gold); text-transform:uppercase; letter-spacing:.2em; font-weight:bold; }
     .brand span { display:block; margin-top:.25rem; color:var(--cream); font-size:.64em; letter-spacing:.3em; }
+    .vault-sign { width:min(100%,620px); margin:0 auto 2rem; padding:1.5rem 1rem; border:3px double #d7a750; border-radius:8px; background:radial-gradient(ellipse at top,#344632,#17241b 75%); box-shadow:0 0 0 6px #17241b,0 0 0 8px #78643d,0 12px 32px #0008; text-transform:uppercase; letter-spacing:.13em; }
+    .vault-sign p { margin:.35rem 0; color:#f3ead7; line-height:1.5; }
+    .vault-sign .welcome { color:#e5c27c; font-size:clamp(1.05rem,3vw,1.35rem); font-weight:bold; }
+    .vault-sign .vault { margin:.6rem 0; color:#f0cc82; font-size:clamp(1.25rem,4vw,1.8rem); font-weight:bold; letter-spacing:.16em; }
+    .vault-sign .management { margin-top:.8rem; color:#e5c27c; font-family:Arial,sans-serif; font-size:.9rem; font-weight:bold; letter-spacing:.22em; }
     h1 { margin:0; color:var(--gold); font-size:clamp(2.5rem,8vw,4.5rem); font-weight:400; }
     .tagline { color:#e4dfcf; font-size:1.15rem; line-height:1.7; }
     .room { margin:1rem 0; padding:1.25rem; border:1px solid #78643d; border-radius:8px; background:#17241b99; }
@@ -21,15 +26,21 @@
     p,li { color:#d3d0c3; line-height:1.75; }
     .notice { padding:1rem; border-left:3px solid var(--gold); background:#ffffff0a; }
     .notice strong { color:var(--cream); }
-    .bucket-line { color:#f0cc82; font-size:1.15rem; font-weight:bold; }
     .back { display:inline-block; margin-top:1rem; padding:.75rem 1rem; border:1px solid #c99d54; border-radius:5px; color:var(--cream); text-decoration:none; }
     .back:hover,.back:focus-visible { background:#ffffff12; outline:2px solid var(--cream); outline-offset:3px; }
     footer { margin-top:2rem; text-align:center; }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; } }
   </style>
 </head>
 <body>
   <main>
     <header>
+      <div class="vault-sign" aria-label="Welcome, friends. What comes in stays here. This is a vault. Management, established 2026.">
+        <p class="welcome">Welcome, friends</p>
+        <p>What comes in stays here.</p>
+        <p class="vault">This is a vault.</p>
+        <p class="management">MGMT — EST. 2026</p>
+      </div>
       <div class="brand">Appalachian Engineering<span>Hillbilly Hippie Hi-Fi</span></div>
       <h1>The Bucket</h1>
       <p class="tagline">Pull up a chair. Meet a neighbor. Toss in an idea.</p>
@@ -39,19 +50,12 @@
       <h2 id="welcome-heading">A community room in the making</h2>
       <p>The Bucket is an idea for a welcoming place where Penns Valley neighbors can mill around, meet one another, share what’s on their minds, and talk about things that matter to the community—like an open house at the local hardware store.</p>
       <p>The plan is to let people submit a thought, question, concern, or awkward situation for private review. The site owner can decide whether it’s suitable to bring into a conversation. Submissions would not appear automatically or be published as public posts.</p>
-      <p class="bucket-line">The Bucket is Vegas, baby: what comes out of the bucket stays in the bucket.</p>
-      <p>Please respect people’s privacy: don’t repeat personal stories or identifying details outside the room, and only share what you’re comfortable sharing. No website can guarantee that other people will keep something confidential.</p>
-    </section>
-
-    <section class="room" aria-labelledby="status-heading">
-      <h2 id="status-heading">The submission box is not open yet</h2>
-      <p class="notice"><strong>Nothing can be submitted through this page yet.</strong> This website is a simple static site and does not collect messages. Before opening the Bucket, a private form service needs to be selected and configured so submissions go to a review queue—not straight onto the website.</p>
-      <p>Before it opens, the privacy details, how long submissions are kept, and how to contact the moderator will be explained here. “Anonymous” would mean your name is not shown to other participants; the form or hosting service may still process technical information, so complete anonymity cannot be promised.</p>
+      <p>Please respect people’s privacy: don’t repeat personal stories or identifying details outside the room, and only share what you’re comfortable sharing. This is an intention and a community rule, not a guarantee of absolute confidentiality; avoid sharing sensitive identifying details.</p>
     </section>
 
     <section class="room" aria-labelledby="guidelines-heading">
       <h2 id="guidelines-heading">Honest talk, neighborly conduct</h2>
-      <p>The goal is honest, respectful discussion about what concerns people, good ideas, and whatever else brings neighbors together. Nobody has to answer a prompt, share more than they want, or participate in role-play.</p>
+      <p>The goal is honest, respectful discussion about what concerns people, good ideas, and whatever else brings neighbors together. Nobody has to answer a prompt, share more than they want, or take part in conversation practice.</p>
       <ul>
         <li>No harassment, threats, gossip, personal attacks, spam, or deliberate disruption.</li>
         <li>Disagree with ideas without attacking people.</li>
@@ -59,6 +63,18 @@
         <li>Prompts and submissions may be declined if they don’t fit the community guidelines.</li>
       </ul>
       <p>If a submission form is added, submissions will be reviewed before anything is shared in a discussion. The moderator may decline or remove material that violates the guidelines.</p>
+    </section>
+
+    <section class="room" aria-labelledby="practice-heading">
+      <h2 id="practice-heading">Practice the Conversation</h2>
+      <p>A low-pressure way to think through a conversation that feels difficult or uncomfortable. The idea is to practice what you might say, build confidence, and explore possible responses—without naming real people or sharing identifying details.</p>
+      <p>This feature is a concept, not an active AI tool. If it is added, it will be optional, explain when AI is involved, and let people stop at any time. It is for conversation practice, not professional counseling or a substitute for real-world help.</p>
+    </section>
+
+    <section class="room" aria-labelledby="status-heading">
+      <h2 id="status-heading">The submission box is not open yet</h2>
+      <p class="notice"><strong>Nothing can be submitted through this page yet.</strong> This website is a simple static site and does not collect messages. Before opening the Bucket, a private form service needs to be selected and configured so submissions go to a review queue—not straight onto the website.</p>
+      <p>Before it opens, the privacy details, how long submissions are kept, and how to contact the moderator will be explained here. “Anonymous” would mean your name is not shown to other participants; the form or hosting service may still process technical information, so complete anonymity cannot be promised.</p>
     </section>
 
     <footer><a class="back" href="index.html">← Back to Appalachian Engineering</a></footer>
