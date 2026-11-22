@@ -26,6 +26,17 @@
     p,li { color:#d3d0c3; line-height:1.75; }
     .notice { padding:1rem; border-left:3px solid var(--gold); background:#ffffff0a; }
     .notice strong { color:var(--cream); }
+    .practice-form { display:grid; gap:1rem; margin-top:1rem; }
+    .practice-form label { display:grid; gap:.45rem; color:#e5c27c; font-weight:bold; }
+    .practice-form select,.practice-form textarea { width:100%; padding:.75rem; border:1px solid #a8874b; border-radius:5px; color:var(--cream); background:#17241b; font:inherit; }
+    .practice-form textarea { min-height:120px; resize:vertical; }
+    .practice-form select:focus-visible,.practice-form textarea:focus-visible,.practice-form button:focus-visible,.practice-actions button:focus-visible { outline:2px solid var(--cream); outline-offset:3px; }
+    .practice-form button,.practice-actions button { justify-self:start; padding:.7rem 1rem; border:1px solid #c99d54; border-radius:5px; color:var(--cream); background:#263b2b; font:inherit; cursor:pointer; }
+    .practice-form button:hover,.practice-actions button:hover { background:#ffffff18; }
+    .practice-result { margin-top:1.25rem; padding:1rem; border-left:3px solid var(--gold); background:#ffffff0a; }
+    .practice-result h3 { margin:.1rem 0 .5rem; color:#e5c27c; }
+    .practice-result p { margin:.5rem 0; }
+    .practice-actions { display:flex; flex-wrap:wrap; gap:.75rem; margin-top:1rem; }
     .back { display:inline-block; margin-top:1rem; padding:.75rem 1rem; border:1px solid #c99d54; border-radius:5px; color:var(--cream); text-decoration:none; }
     .back:hover,.back:focus-visible { background:#ffffff12; outline:2px solid var(--cream); outline-offset:3px; }
     footer { margin-top:2rem; text-align:center; }
@@ -67,8 +78,29 @@
 
     <section class="room" aria-labelledby="practice-heading">
       <h2 id="practice-heading">Practice the Conversation</h2>
-      <p>A low-pressure way to think through a conversation that feels difficult or uncomfortable. The idea is to practice what you might say, build confidence, and explore possible responses—without naming real people or sharing identifying details.</p>
-      <p>This feature is a concept, not an active AI tool. If it is added, it will be optional, explain when AI is involved, and let people stop at any time. It is for conversation practice, not professional counseling or a substitute for real-world help.</p>
+      <p>Try out a possible response to a common, everyday situation. This is a simple practice exercise—not AI, counseling, or professional advice. Your writing stays in this page in your browser: it is not sent or saved by this feature. Please keep names and identifying details out of anything you type.</p>
+      <form class="practice-form" id="practice-form">
+        <label for="practice-scenario">Choose a situation
+          <select id="practice-scenario" name="scenario">
+            <option value="boundary">You want to set a respectful boundary.</option>
+            <option value="help">You need to ask someone for help.</option>
+            <option value="disagreement">You disagree and want to keep things neighborly.</option>
+          </select>
+        </label>
+        <label for="practice-response">What might you say? (optional)
+          <textarea id="practice-response" name="response" maxlength="1000" placeholder="Write a few words, or leave this blank and just use the prompts below."></textarea>
+        </label>
+        <button type="submit">Practice this conversation</button>
+      </form>
+      <div class="practice-result" id="practice-result" role="region" aria-live="polite" aria-labelledby="practice-result-title" hidden>
+        <h3 id="practice-result-title">A gentle next step</h3>
+        <p id="practice-feedback"></p>
+        <p id="practice-prompt"></p>
+        <div class="practice-actions">
+          <button type="button" id="try-again">Try another situation</button>
+          <button type="button" id="clear-practice">Clear my writing</button>
+        </div>
+      </div>
     </section>
 
     <section class="room" aria-labelledby="status-heading">
@@ -79,5 +111,42 @@
 
     <footer><a class="back" href="index.html">← Back to Appalachian Engineering</a></footer>
   </main>
+  <script>
+    const practiceForm = document.getElementById('practice-form');
+    const scenarioSelect = document.getElementById('practice-scenario');
+    const responseField = document.getElementById('practice-response');
+    const practiceResult = document.getElementById('practice-result');
+    const practiceFeedback = document.getElementById('practice-feedback');
+    const practicePrompt = document.getElementById('practice-prompt');
+    const scenarioPrompts = {
+      boundary: 'What boundary would feel clear and fair to you? Try stating what you need, using an “I” statement, and keeping it focused on the situation.',
+      help: 'What specific help would make a difference? Try asking directly, sharing only the context needed, and giving the other person room to respond.',
+      disagreement: 'What do you understand about the other person’s view, even if you see it differently? Try naming the shared concern, then explain your perspective without making it personal.'
+    };
+
+    practiceForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const response = responseField.value.trim();
+      practiceFeedback.textContent = response
+        ? 'You took a moment to put your thoughts into words—that is a useful first step. Read your response once and consider whether it says what you need in a way that feels respectful and true to you.'
+        : 'No need to have the perfect words. Use the reflection prompt below to think through a first sentence, or practice aloud on your own.';
+      practicePrompt.textContent = scenarioPrompts[scenarioSelect.value];
+      practiceResult.hidden = false;
+      practiceResult.scrollIntoView({ block: 'nearest', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    });
+
+    document.getElementById('try-again').addEventListener('click', () => {
+      scenarioSelect.selectedIndex = (scenarioSelect.selectedIndex + 1) % scenarioSelect.options.length;
+      responseField.value = '';
+      practiceResult.hidden = true;
+      scenarioSelect.focus();
+    });
+
+    document.getElementById('clear-practice').addEventListener('click', () => {
+      responseField.value = '';
+      practiceResult.hidden = true;
+      responseField.focus();
+    });
+  </script>
 </body>
 </html>
