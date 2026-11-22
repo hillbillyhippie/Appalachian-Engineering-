@@ -29,6 +29,9 @@
     .window::before,.window::after { content:''; position:absolute; background:#593a23; } .window::before { left:48%; top:0; bottom:0; width:5px; } .window::after { left:0; right:0; top:52%; height:5px; }
     .knob { position:absolute; top:61%; right:12%; width:13px; height:13px; border-radius:50%; background:radial-gradient(circle at 35% 30%,#ffe6a3,#bd8539 60%,#6d481e); box-shadow:0 1px 4px #26170d; }
     .threshold { position:absolute; left:-8%; right:-8%; bottom:-7px; height:13px; background:#4a3524; box-shadow:0 8px 14px #10171088; }
+    .vault-sign { position:absolute; left:50%; bottom:-118px; transform:translateX(-50%); width:min(230px,84%); padding:.55rem .45rem .48rem; border:2px solid #d7a750; border-radius:5px; background:#18221bf2; box-shadow:0 5px 16px #101710bb; color:#e5c27c; text-align:center; text-transform:uppercase; letter-spacing:.08em; }
+    .vault-sign strong { display:block; font-size:.72rem; line-height:1.35; }
+    .vault-sign span { display:block; margin-top:.18rem; font:700 .58rem/1.35 Arial,sans-serif; letter-spacing:.13em; }
     .door-button:hover .door { filter:brightness(1.12); }
     .door-button:focus-visible { outline:3px solid var(--cream); outline-offset:9px; border-radius:8px; }
     .enter-hint { display:inline-block; margin-top:1.15rem; color:var(--cream); font-size:.88rem; letter-spacing:.13em; text-transform:uppercase; } .enter-hint::after { content:'  →'; color:var(--gold); }
@@ -57,7 +60,7 @@
     .parts-note a { color:#f0cc82; }
     .back-button { margin-top:2rem; padding:.7rem 1rem; color:var(--cream); border:1px solid #c99d54; border-radius:4px; background:transparent; cursor:pointer; } .back-button:hover { background:#ffffff12; }
     @keyframes rise-in { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
-    @media (max-width:620px) { .market-links { grid-template-columns:1fr; } }
+    @media (max-width:620px) { .market-links { grid-template-columns:1fr; } .vault-sign { bottom:-108px; } }
     @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; } }
   </style>
 </head>
@@ -71,6 +74,7 @@
         <p class="subtitle">Good things happen when you step inside.</p>
         <button class="door-button" id="enter-button" type="button" aria-label="Open the door and enter Appalachian Engineering">
           <span class="door-frame" aria-hidden="true"><span class="door"><span class="window"></span><span class="knob"></span></span><span class="threshold"></span></span>
+          <span class="vault-sign" aria-hidden="true"><strong>Welcome, friends<br>What comes in stays here.<br>This is a vault.</strong><span>MGMT — EST. 2026</span></span>
         </button>
         <span class="enter-hint">Tap the door to enter</span>
       </div>
